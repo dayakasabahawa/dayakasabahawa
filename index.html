@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0716" />
+  <title>දායක සභාව | Video Share</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="bg-blobs" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+  </div>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">දා</span>
+      <div class="brand-text">
+        <h1>දායක සභාව</h1>
+        <p>වීඩියෝ බෙදාගැනීමේ වේදිකාව</p>
+      </div>
+    </div>
+    <nav class="topnav" id="topnav"></nav>
+  </header>
+
+  <main class="container">
+
+    <!-- ============ UPLOAD VIEW ============ -->
+    <section id="view-upload" class="view active">
+
+      <div class="hero">
+        <span class="hero-badge">● පෞද්ගලික හා ආරක්ෂිත</span>
+        <h2>ඔබේ වීඩියෝව <em>බෙදාගන්න</em> පහසුවෙන්</h2>
+        <p>වීඩියෝව උඩුගත කරන්න, බෙදාගැනීමේ ලින්ක් එකක් ලබාගන්න, ඕනෑම කෙනෙක්ට එය බාගත කරගැනීමට දෙන්න.</p>
+      </div>
+
+      <div class="card">
+        <div class="dropzone" id="dropzone">
+          <input type="file" id="fileInput" accept="video/*" hidden />
+          <div class="dz-inner" id="dzInner">
+            <div class="dz-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <h3>වීඩියෝව මෙහිට ඇද දමන්න</h3>
+            <p>නැතහොත් <span class="link">බ්‍රවුස් කරන්න</span> ක්ලික් කරන්න</p>
+            <small>MP4 · WEBM · MOV · OGG — උපරිම ගබඩා ධාරිතාව අනුව</small>
+          </div>
+        </div>
+
+        <div class="file-preview hidden" id="filePreview">
+          <div class="fp-video"><video id="previewVideo" controls playsinline></video></div>
+          <div class="fp-info">
+            <div class="fp-meta">
+              <strong id="fileName">—</strong>
+              <span id="fileSize">—</span>
+            </div>
+            <div class="progress-wrap hidden" id="progressWrap">
+              <div class="progress-bar"><span id="progressFill"></span></div>
+              <span id="progressText">0%</span>
+            </div>
+          </div>
+          <div class="fp-actions">
+            <button class="btn ghost" id="btnReset" type="button">නැවත තෝරන්න</button>
+            <button class="btn primary" id="btnUpload" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              උඩුගත කරන්න
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card success hidden" id="successCard">
+        <div class="success-check">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3>සාර්ථකයි! වීඩියෝව සූදානම්</h3>
+        <p>මෙම ලින්ක් එක අන් අය සමඟ බෙදාගන්න. ඔවුන්ට වීඩියෝව බාගත කරගත හැක.</p>
+        <div class="share-box" id="shareBox">
+          <input type="text" id="shareLink" readonly />
+          <button class="btn primary" id="btnCopy" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            පිටපත් කරන්න
+          </button>
+        </div>
+        <div class="share-alt">
+          <button class="btn pill" id="btnWhatsapp" type="button">💬 WhatsApp</button>
+          <button class="btn pill" id="btnFacebook" type="button">📘 Facebook</button>
+          <button class="btn pill" id="btnTelegram" type="button">✈️ Telegram</button>
+          <button class="btn pill" id="btnViber" type="button">💜 Viber</button>
+        </div>
+      </div>
+
+      <!-- Uploaded video list -->
+      <section class="mylist" id="mylist">
+        <div class="section-head">
+          <h3>මගේ වීඩියෝ</h3>
+          <span id="myCount" class="pill-count">0</span>
+        </div>
+        <div class="list-grid" id="listGrid"></div>
+        <p class="empty-note" id="emptyNote">තවම වීඩියෝ නැත. පළමුවැන්න උඩුගත කරන්න!</p>
+      </section>
+
+    </section>
+
+    <!-- ============ DOWNLOAD VIEW ============ -->
+    <section id="view-download" class="view">
+
+      <div class="card download-card">
+        <div class="loading" id="dlLoading">
+          <div class="spinner"></div>
+          <p>වීඩියෝව පූරණය වෙමින්...</p>
+        </div>
+
+        <div class="dl-error hidden" id="dlError">
+          <div class="dl-error-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <h3>දැනට ලින්ක් එක වලංගු නොවේ</h3>
+          <p>මෙම වීඩියෝව හමු නොවීය. ලින්ක් එක නිවැරදිදැයි පරීක්ෂා කරන්න, නැතහොත් අයිතිකරුගෙන් නැවත ලබාගන්න.</p>
+          <button class="btn primary" id="btnGoHome" type="button">← මුල් පිටුවට</button>
+        </div>
+
+        <div class="dl-body hidden" id="dlBody">
+          <div class="dl-badge">දායක සභාව සිට බෙදාගත් වීඩියෝවක්</div>
+          <div class="dl-video">
+            <video id="dlVideo" controls playsinline></video>
+          </div>
+          <div class="dl-info">
+            <h2 id="dlTitle">—</h2>
+            <div class="dl-meta">
+              <span class="chip" id="dlSize">—</span>
+              <span class="chip" id="dlType">—</span>
+              <span class="chip" id="dlDate">—</span>
+            </div>
+          </div>
+          <button class="btn primary big" id="btnDownload" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            වීඩියෝව බාගත කරන්න
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> දායක සභාව · සම්පූර්ණයෙන්ම බ්‍රවුසරය තුළ ක්‍රියාත්මක වේ</p>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
