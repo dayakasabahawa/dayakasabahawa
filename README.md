@@ -1,16 +1,47 @@
-## Hi there 👋
+# 🎬 දායක සබහව
 
-<!--
-**dayakasabahawa/dayakasabahawa** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+> 🎥 **අලුත්ම වීඩියෝ | ජනප්‍රිය වීඩියෝ | ඔයාලා ආසම වීඩියෝ**
 
-Here are some ideas to get you started:
+---
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## 🎞️ අපි ගැන
+
+**දායක සබහව** කියන්නේ වීඩියෝ සම්බන්ධ අලුත් දේවල්, ජනප්‍රිය වීඩියෝ සහ ඔබලා කැමතිම වීඩියෝ එක තැනකට ගෙන එන platform එකක්. ❤️
+
+### 🔥 අපෙන් බලාපොරොත්තු වෙන්න
+
+* 🎬 අලුත් වීඩියෝ
+* ⭐ ජනප්‍රිය වීඩියෝ
+* ❤️ ඔයාලා ආසම වීඩියෝ
+* 📺 විවිධ වීඩියෝ අන්තර්ගතයන්
+* 🆕 අලුත්ම වීඩියෝ Updates
+* 🎥 වීඩියෝ සම්බන්ධ අලුත් තොරතුරු
+
+---
+
+## 📹 වීඩියෝ
+
+**🎬 අලුත් වීඩියෝ අපෙන්**
+
+**🔥 Trending Videos**
+
+**❤️ ඔයාලා ආසම වීඩියෝ**
+
+**⭐ ජනප්‍රියම වීඩියෝ**
+
+---
+
+## 🚀 අපේ අරමුණ
+
+> **“හොඳ වීඩියෝ හොඳම විදිහට ඔබ වෙත ගෙන ඒම.”** 🎥❤️
+
+---
+
+### 🎬 දායක සබහව
+
+**වීඩියෝ බලමු • රසවිඳිමු • බෙදාගමු ❤️**
+
+---
+
+⭐ **Stay tuned for more videos!**
+🎥 **දායක සබහව සමඟ රැඳී සිටින්න.**
